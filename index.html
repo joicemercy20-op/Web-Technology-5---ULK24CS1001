@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Registration | Form Validation</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="validate.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="brand-icon">S</span>
+      Smart<span>Form</span>
+    </a>
+    <span class="top-label">JAVASCRIPT FORM VALIDATION</span>
+  </header>
+
+  <main class="page">
+    <section class="intro">
+      <span class="eyebrow">WELCOME ABOARD</span>
+      <h1>Create your <span>account.</span></h1>
+      <p>Enter your details below. Our smart form will check your
+        information and help you correct any mistakes.</p>
+
+      <div class="feature-list">
+        <div class="feature">
+          <span class="feature-icon purple">✓</span>
+          <div>
+            <strong>Smart validation</strong>
+            <small>Get helpful feedback while typing.</small>
+          </div>
+        </div>
+        <div class="feature">
+          <span class="feature-icon blue">⌁</span>
+          <div>
+            <strong>Password protection</strong>
+            <small>Check password strength instantly.</small>
+          </div>
+        </div>
+        <div class="feature">
+          <span class="feature-icon green">↗</span>
+          <div>
+            <strong>Simple and responsive</strong>
+            <small>Designed for desktop and mobile.</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <span class="tip-icon">✦</span>
+        <p><strong>Quick tip</strong><br>
+          Use a valid email address and a strong password
+          to complete your registration.</p>
+      </div>
+    </section>
+
+    <section class="form-card">
+      <div class="card-heading">
+        <div>
+          <h2>Registration Form</h2>
+          <p>Fill in all required fields to continue.</p>
+        </div>
+        <span class="secure-icon">♙</span>
+      </div>
+
+      <div class="progress-track">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+      <p id="progressText" class="progress-text">0% completed</p>
+
+      <form id="registrationForm" novalidate>
+        <div class="field">
+          <label for="fullName">Full Name <span>*</span></label>
+          <input id="fullName" name="fullName" type="text"
+            placeholder="Enter your full name"
+            autocomplete="name" aria-describedby="nameError">
+          <small class="error" id="nameError"></small>
+        </div>
+
+        <div class="field">
+          <label for="email">Email Address <span>*</span></label>
+          <input id="email" name="email" type="email"
+            placeholder="you@example.com"
+            autocomplete="email" aria-describedby="emailError">
+          <small class="error" id="emailError"></small>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone Number <span>*</span></label>
+          <input id="phone" name="phone" type="tel"
+            placeholder="Enter 10-digit mobile number"
+            inputmode="numeric" maxlength="10"
+            autocomplete="tel" aria-describedby="phoneError">
+          <small class="error" id="phoneError"></small>
+        </div>
+
+        <div class="field">
+          <label for="password">Password <span>*</span></label>
+          <div class="password-wrap">
+            <input id="password" name="password" type="password"
+              placeholder="Create a strong password"
+              autocomplete="new-password"
+              aria-describedby="passwordError">
+            <button class="toggle-password" type="button"
+              data-target="password" aria-label="Show password">Show</button>
+          </div>
+          <div class="strength-track">
+            <div id="strengthBar" class="strength-bar"></div>
+          </div>
+          <small id="strengthText" class="strength-text">
+            Password strength: not entered
+          </small>
+          <small class="hint">At least 8 characters, one uppercase letter,
+            one number, and one special character.</small>
+          <small class="error" id="passwordError"></small>
+
+          <div class="password-rules">
+            <span id="ruleLength">○ 8+ characters</span>
+            <span id="ruleUpper">○ Uppercase letter</span>
+            <span id="ruleNumber">○ One number</span>
+            <span id="ruleSpecial">○ Special character</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="confirmPassword">Confirm Password <span>*</span></label>
+          <div class="password-wrap">
+            <input id="confirmPassword" name="confirmPassword"
+              type="password" placeholder="Re-enter your password"
+              autocomplete="new-password"
+              aria-describedby="confirmPasswordError">
+            <button class="toggle-password" type="button"
+              data-target="confirmPassword"
+              aria-label="Show confirm password">Show</button>
+          </div>
+          <small class="error" id="confirmPasswordError"></small>
+        </div>
+
+        <div class="terms-row">
+          <input id="terms" name="terms" type="checkbox"
+            aria-describedby="termsError">
+          <label for="terms">I agree to the terms and conditions.</label>
+        </div>
+        <small class="error terms-error" id="termsError"></small>
+
+        <div id="formMessage" class="form-message"
+          role="status" aria-live="polite" tabindex="-1"></div>
+
+        <button class="submit-btn" type="submit">
+          Create Account <span>→</span>
+        </button>
+        <button class="reset-btn" type="reset">Clear Form</button>
+
+        <p class="required-note">* All fields are required.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>SmartForm · JavaScript Form Validation Project</p>
+    <p>Built with HTML, CSS and JavaScript</p>
+  </footer>
+</body>
+</html>
